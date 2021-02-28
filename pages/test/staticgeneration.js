@@ -10,8 +10,8 @@ const pageTitle = 'Next.js > Static Generation + Naver > Search Api'
 
 export async function getStaticProps() {
 
-  const client_id = 'EY7anGhQqyrgDJU47GpY';
-  const client_secret = 'rIy5tA9HR4';
+  const client_id = process.env.nv_client_id;
+  const client_secret = process.env.nv_client_secret;
 
     const datas = await fetch('https://openapi.naver.com/v1/search/blog?query=next.js', {
       headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
@@ -39,15 +39,15 @@ export default function PageStaticGeneration({ items }) {
       <div className="bg-hero-pattern bg-cover sticky top-0">
         <div className={styles.container}>
           <Head>
-            <title>NEXT/HEAD</title>
+            <title>NEXT/SG</title>
             <link rel="icon" href="/heart.ico" />
             <meta name="title" property="og:title" content="next/head" key="ogtitle" />
             <meta
               name="description"
               property="og:description"
-              content="example on next/head" key="ogdes" />
-            <meta name="image" property="og:image" content="/images/heart.webp" key="ogimage" />
-            <meta name="url" property="og:url" content="http://localhost:3000/exam/head" key="ogurl" />
+              content="example on next/staticgeneration" key="ogdes" />
+            <meta name="image" property="og:image" content="/images/profile.jpeg" key="ogimage" />
+            <meta name="url" property="og:url" content="http://localhost:3000/exam/staticgeneration" key="ogurl" />
         </Head>
         <header className={styles.header}>
             <Image
