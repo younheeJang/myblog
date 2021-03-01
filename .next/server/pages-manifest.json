@@ -3,6 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/test/staticgeneration": "pages/test/staticgeneration.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/test/staticgeneration": "pages/test/staticgeneration.js"
 }
