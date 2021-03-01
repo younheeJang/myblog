@@ -39,15 +39,15 @@ export default function PageStaticGeneration({ items }) {
       <div className="bg-hero-pattern bg-cover sticky top-0">
         <div className={styles.container}>
           <Head>
-            <title>NEXT/HEAD</title>
+            <title>NEXT/SG</title>
             <link rel="icon" href="/heart.ico" />
-            <meta name="title" property="og:title" content="next/head" key="ogtitle" />
+            <meta name="title" property="og:title" content="next/sg" key="ogtitle" />
             <meta
               name="description"
               property="og:description"
-              content="example on next/head" key="ogdes" />
+              content="example on next/staticgeneration" key="ogdes" />
             <meta name="image" property="og:image" content="/images/heart.webp" key="ogimage" />
-            <meta name="url" property="og:url" content="http://localhost:3000/exam/head" key="ogurl" />
+            <meta name="url" property="og:url" content="http://localhost:3000/exam/staticgeneration" key="ogurl" />
         </Head>
         <header className={styles.header}>
             <Image
