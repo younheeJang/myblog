@@ -45,7 +45,7 @@ export default function PageStaticGeneration({ items }) {
             <meta
               name="description"
               property="og:description"
-              content="example on next/staticgeneration" key="ogdes" />
+              content="example on test/staticgeneration" key="ogdes" />
             <meta name="image" property="og:image" content="/images/heart.webp" key="ogimage" />
             <meta name="url" property="og:url" content="http://localhost:3000/exam/staticgeneration" key="ogurl" />
         </Head>
