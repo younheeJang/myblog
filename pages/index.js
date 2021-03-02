@@ -16,11 +16,11 @@ export default function Home() {
           <Head>
             <title>NEXT/INDEX</title>
             <link rel="icon" href="/heart.ico" />
-            <meta name="title" property="og:title" content="next/head" key="ogtitle" />
+            <meta name="title" property="og:title" content="next/index" key="ogtitle" />
             <meta
               name="description"
               property="og:description"
-              content="my-nextjs-blog" key="ogdes" />
+              content="my blog" key="ogdes" />
             <meta name="image" property="og:image" content="/images/profile.jpeg" key="ogimage" />
             <meta name="url" property="og:url" content="http://localhost:3000/" key="ogurl" />
         </Head>
