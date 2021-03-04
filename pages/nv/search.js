@@ -8,13 +8,20 @@ import utilStyles from '../../styles/utils.module.css'
 const name = 'CURIOUS JEAGER'
 const pageTitle = 'Next.js > Static Generation + Naver > Search Api'
 
+export async function getServerSideProps({ctx}) {
+   
+    //await fetch()
+  return {
+    props: {
+       
+    },
+  }
+}
+
+
 /*
-
-export async function getStaticProps() {
-
-  const client_id = process.env.nv_client_id;
+const client_id = process.env.nv_client_id;
   const client_secret = process.env.nv_client_secret;
-
     const datas = await fetch('https://openapi.naver.com/v1/search/blog?query=next.js', {
       headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
       }, function (error, response, body) {
@@ -27,18 +34,21 @@ export async function getStaticProps() {
      }
    }).then((res) => { 
     return res.json()});
-
   const posts = datas.items
-
-  return {
-    props: { posts },
-  }
-}
-
 */
 
 
-export default function SearchWithNv({ posts }) {
+
+export default function SearchWithNv({posts}) {
+
+    let textInput = React.createRef();
+
+    function handleClick() {
+      const searchingWord = textInput.current.value;
+      const res = fetch(`/api/posts/${searchingWord}`)
+      console.log(res)
+    }
+    
   return (
     <>
       <div className="bg-hero-pattern bg-cover sticky top-0">
@@ -74,10 +84,12 @@ export default function SearchWithNv({ posts }) {
     </div>
     <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
         <div className="relative text-gray-600 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
-            <input type="search" name="serch" placeholder="Search" className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" />
-            <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
+        
+            <input ref={textInput} type="search" name="search" placeholder="Search" className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" />
+            <button type="submit" className="absolute right-0 top-0 mt-3 mr-4" onClick={handleClick}>
                 <Image width={15} height={15} src="/images/search-interface-symbol.png" className="h-4 w-4 fill-curren"></Image>
             </button>
+        
         </div>
       {posts && posts.map(({ link, title, postdate, bloggername, description }) => (
         <Link href={link} key={link} className="cursor-pointer">

@@ -29,10 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/next/dist/pages/_error.js"
     ],
-    "/nv_api/search": [
+    "/nv/search": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/nv_api/search.js"
+      "static/chunks/pages/nv/search.js"
     ]
   },
   "ampFirstPages": []
