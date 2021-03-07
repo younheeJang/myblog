@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../../styles/layout.module.css'
 import utilStyles from '../../../styles/utils.module.css'
-import { returnNvPostsData } from '../../../lib/returnNvPostsData'
+import DateClock from '../../../components/DateClock'
 
 import React, { useState, useEffect } from "react";
 
@@ -18,7 +18,7 @@ export default function SearchWithNv({}) {
   async function fetchPostsData() {
       const searchingWord = textInput.current.value;
       await fetch(`/api/posts/${searchingWord}`)
-      await setPostsData(returnNvPostsData);
+      //await setPostsData(returnNvPostsData);
   }
      
 
@@ -39,6 +39,7 @@ export default function SearchWithNv({}) {
             <meta name="url" property="og:url" content="http://localhost:3000/nv/search" key="ogurl" />
         </Head>
         <header className={styles.header}>
+            <DateClock/>  
             <Image
               priority
               src="/images/profile.jpeg"

@@ -1,9 +1,6 @@
 import Cors from 'cors'
 import initMiddleware from '../../../lib/init-middleware'
 
-import fs from 'fs'
-import path from 'path'
-
 export const config = {
   api: {
     externalResolver: true,
@@ -24,9 +21,10 @@ export default async function handler(req, res) {
   const {
     query: { searchingWord },
   } = req
-
+  
   const client_id = process.env.nv_client_id;
   const client_secret = process.env.nv_client_secret;
+  console.log(searchingWord)
     const datas = await fetch(`https://openapi.naver.com/v1/search/blog?query=${searchingWord}`, {
       headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
       }, function (error, response, body) {
@@ -38,10 +36,10 @@ export default async function handler(req, res) {
        console.log('error = ' + response.statusCode);
      }
    }).then((res) => { 
-     console.log(res.json())
     return res.json()});
-  let posts = datas.items
-  let nvPostDatas = JSON.stringify(posts);
-  fs.writeFile('./resources/nvPostDatas.txt', nvPostDatas,function(err){ if (err === null) { console.log(nvPostDatas); } else { console.log(err); } });
-}
 
+  const posts = datas.items
+
+  console.log(posts)
+  return posts
+}

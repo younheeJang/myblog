@@ -1,8 +1,8 @@
+
 import Head from 'next/head'
 import Image from 'next/image'
 import utilStyles from '../styles/utils.module.css'
 import styles from '../styles/layout.module.css'
-
 
 
 const name = 'CURIOUS JEAGER'
@@ -33,6 +33,7 @@ export default function Home() {
               width={144}
               alt={name}
             />
+            
             <h2 className={utilStyles.headingLg}>         
                 <div className="bg-opacity-50 text-gray-200">{name}</div>
             </h2>
