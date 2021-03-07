@@ -6,7 +6,7 @@ export const TICK = 'TICK';
 const tick = ({interval}) => {
   return {
     type: TICK,
-    time: format(new Date(), 'Y M d EEEE h:m:ss'),
+    time: format(new Date(), 'Y M d EEEE H:m:ss'),
     interval
   }
 }
