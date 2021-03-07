@@ -8,7 +8,7 @@ import DateClock from '../../../components/DateClock'
 import React, { useState, useEffect } from "react";
 
 const name = 'CURIOUS JEAGER'
-const pageTitle = 'Next.js > Static Generation + Naver > Search Api'
+const pageTitle = 'Next.js + Redux + Naver > Search Api'
 
 export default function SearchWithNv({}) {
   const [posts, setPostsData] = useState(null);
@@ -28,7 +28,7 @@ export default function SearchWithNv({}) {
       <div className="bg-hero-pattern bg-cover sticky top-0">
         <div className={styles.container}>
           <Head>
-            <title>NEXT/NvSearchApi</title>
+            <title>NvSearchApi</title>
             <link rel="icon" href="/heart.ico" />
             <meta name="title" property="og:title" content="next/sg" key="ogtitle" />
             <meta
@@ -58,9 +58,9 @@ export default function SearchWithNv({}) {
       </div> 
     </div>
     <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
-        <div className="relative text-gray-600 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
+        <div className="text-gray-600 max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-2xl mb-5 overflow-hidden ">
         
-            <input ref={textInput} type="search" name="search" placeholder="Search" className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" />
+            <input ref={textInput} type="search" name="search" placeholder="Search" className="overflow-hidden bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" />
             <button type="submit" className="absolute right-0 top-0 mt-3 mr-4" onClick={fetchPostsData}>
                 <Image width={15} height={15} src="/images/search-interface-symbol.png" className="h-4 w-4 fill-curren"></Image>
             </button>
