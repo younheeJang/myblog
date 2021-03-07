@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from '../../../styles/layout.module.css'
 import utilStyles from '../../../styles/utils.module.css'
 import DateClock from '../../../components/DateClock'
+import NvBlogPosts from '../../../components/NvBlogPosts'
 
 import React, { useState, useEffect } from "react";
 
@@ -13,6 +14,7 @@ const pageTitle = 'Next.js + Redux + Naver > Search Api'
 export default function SearchWithNv({}) {
   const [posts, setPostsData] = useState(null);
 
+  /*
   let textInput = React.createRef();
 
   async function fetchPostsData() {
@@ -20,8 +22,7 @@ export default function SearchWithNv({}) {
       await fetch(`/api/posts/${searchingWord}`)
       //await setPostsData(returnNvPostsData);
   }
-     
-
+  */
 
   return (
     <>
@@ -57,6 +58,8 @@ export default function SearchWithNv({}) {
         </header>
       </div> 
     </div>
+    <NvBlogPosts />
+    { /*
     <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
         <div className="text-gray-600 max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-2xl mb-5 overflow-hidden ">
         
@@ -66,6 +69,7 @@ export default function SearchWithNv({}) {
             </button>
         
         </div>
+    
       {posts && posts.map(({ link, title, postdate, bloggername, description }) => (
         <Link href={link} key={link} className="cursor-pointer">
             <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-5">
@@ -78,8 +82,9 @@ export default function SearchWithNv({}) {
                 </div>
             </div>
         </Link>
-      ))}
+      ))}  
     </div>
-   </>  
+*/}
+    </>  
   )
 }

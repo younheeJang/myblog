@@ -19,9 +19,9 @@ export default async function handler(req, res) {
 
   // Rest of the API logic
   const {
-    query: { searchingWord },
+    query: { nv: searchingWord },
   } = req
-  
+  console.log(req.query.nv)
   const client_id = process.env.nv_client_id;
   const client_secret = process.env.nv_client_secret;
   console.log(searchingWord)
