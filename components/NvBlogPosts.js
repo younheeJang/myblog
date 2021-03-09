@@ -1,41 +1,31 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {startTimer} from '../actions/dateClockAction'
 import Image from 'next/image'
 import Link from 'next/link'
-import useSWR, { mutate } from 'swr'
 import { useRouter } from "next/router";
+import { resolve } from 'q';
 
 const URL = "/api/posts";
 
 export default function NvBlogPosts(){
     const router = useRouter(); 
-    const fetcher = (...args) => fetch(...args).then(res => res.json()) 
+    
     const { 
         query: { searchingWord }, 
     } = router; 
-    const { data, mutate} = useSWR( 
-        searchingWord ? `${URL}/${searchingWord}` : null, fetcher, { refreshInterval: 0, revalidateOnFocus: false, revalidateOnReconnect: false, } );
-
+    
     let posts = null
     let textInput = React.createRef();
-    //const fetcher = (...args) => fetch(...args).then(res => res.json()) 
-    //const { data: posts, error } = useSWR('/api/posts/123', fetcher)
-   
-    function fetchPostsData() {
+    
+    async function fetchPostsData() {
+        console.log(posts)
         const searchingWord = textInput.current.value;
         console.log(searchingWord)
         console.log(`${URL}/${searchingWord}`)
-        fetch(`${URL}/${searchingWord}`)
-     posts = mutate(`${URL}/${searchingWord}`, false)
+        let result = await fetch(`${URL}/${searchingWord}`).then(res => res.json())//.then(res => res.json()).catch(err => console.log(err))
+        posts = result.items
         console.log(posts)
-        
-        //const fetcher = (...args) => fetch(...args).then(res => res.json()) 
-        //const { data: posts, error } = useSWR('/api/posts/123', fetcher)
-        //await setPostsData(returnNvPostsData);
-        //articleMutate({ ...posts, body: editTextArea.value }, true);
     }
-       
+    
     if(!posts){
     return (
         <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
@@ -78,4 +68,3 @@ export default function NvBlogPosts(){
     )
   }
 }
-

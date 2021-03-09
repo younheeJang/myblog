@@ -13,6 +13,7 @@ const bindMiddleware = (middleware) => {
 
 const combinedReducer = combineReducers({
   dateClockReducer,
+  
 })
 
 const reducer = (state, action) => {
@@ -22,6 +23,7 @@ const reducer = (state, action) => {
       ...action.payload, // apply delta from hydration
     }
     if (state.dateClockReducer.dateClockReducer) nextState.dateClockReducer.dateClockReducer = state.dateClockReducer.dateClockReducer
+   
     // preserve count value on client side navigation
     return nextState
   } else {

@@ -16,30 +16,29 @@ const cors = initMiddleware(
 export default async function handler(req, res) {
   // Run cors
   await cors(req, res)
-
   // Rest of the API logic
   const {
     query: { nv: searchingWord },
   } = req
-  console.log(req.query.nv)
+  //console.log(req.query.nv)
   const client_id = process.env.nv_client_id;
   const client_secret = process.env.nv_client_secret;
   console.log(searchingWord)
-    const datas = await fetch(`https://openapi.naver.com/v1/search/blog?query=${searchingWord}`, {
-      headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
-      }, function (error, response, body) {
-          if (!error && response.statusCode == 200) {
-            res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
-            res.end(body);
-         } else {
-       res.status(response.statusCode).end();
-       console.log('error = ' + response.statusCode);
-     }
-   }).then((res) => { 
-    return res.json()});
+  const datas = await fetch(`https://openapi.naver.com/v1/search/blog?query=${searchingWord}`, {
+    headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
+    }, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
+          res.end(body);
+       } else {
+     res.status(response.statusCode).end();
+     console.log('error = ' + response.statusCode);
+   }
+ }).then((res) => { 
+   
+  return res});
+  const result = await datas.json()// 리턴에 아이템 꺼내서 제이슨 안에 넣어주고 테스팅
 
-  const posts = datas.items
 
-  console.log(posts)
-  return posts
+return res.json(result)
 }
