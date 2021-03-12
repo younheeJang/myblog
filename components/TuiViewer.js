@@ -1,24 +1,16 @@
 import 'codemirror/lib/codemirror.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
-import { Editor } from '@toast-ui/react-editor';
-import React, {  useRef  } from 'react';
+import { Viewer } from '@toast-ui/react-editor';
 import styles from '../styles/layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import DateClock from './DateClock'
 import Image from 'next/image'
-import { setEditorData } from '../actions/editorDataAction'
-import { useDispatch } from 'react-redux';
-import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux';
 
-function TuiEditor({}) {
-    const router = useRouter()
-    const dispatch = useDispatch();
-    const editorRef = useRef();
-    function handleSubmit() {
-        const editorData = editorRef.current.getInstance().getHtml();
-        dispatch(setEditorData(editorData))
-        return router.push('/tui/viewer')
-    }
+export default function setTuiViewer() {
+    
+    const editorData = useSelector((state) => state.editorDataReducer.editorData);
+
     return(
         <>
         <div className="bg-purple-200 sticky top-0">
@@ -38,26 +30,17 @@ function TuiEditor({}) {
                             </div>
                             <DateClock />
                         </div>
-                        <div className="col-end-7 col-span-1" onClick={handleSubmit}>
-                            <div className="relative">
-                                <div className="absolute right-0 m-1.5">
-                                    <img src="/images/upload.png" />
-                                </div>
-                            </div>
+                        <div className="col-end-7 col-span-1">    
                         </div>
                     </div>
                 </div>
             </div>
             <div className={styles.container}>
-            <Editor 
-                initialValue=''
-                initialEditType='wysiwyg'
-                height='70vh'
-                ref={editorRef}
+            <Viewer
+                initialValue={editorData}
+                height='70vh'   
             />
             </div>
         </>
     )
 }
-
-export default TuiEditor;

@@ -1,10 +1,12 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
-const TuiEditor = dynamic(
-  () => import('../../components/TuiEditor'),
+const TuiViewer = dynamic(
+  () => import('../../components/TuiViewer'),
   { ssr: false }
 )
+
+
 
 export default function PostWithTuiEditor({}) {
 
@@ -23,7 +25,7 @@ export default function PostWithTuiEditor({}) {
             </Head>
             
             
-                <TuiEditor/>
+            <TuiViewer/>
            
         </>
     )

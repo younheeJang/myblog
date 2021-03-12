@@ -1,5 +1,4 @@
 import React,{ useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import useSWR, { mutate } from 'swr'
 
@@ -41,10 +40,10 @@ export default function NvBlogPosts(){
             </div>
         
             {posts && posts.map(({ link, title, postdate, bloggername, description }) => (
-                <Link href={link} key={link} className="cursor-pointer">
-                    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5">
-                        <div className="md:flex">
-                         <div className="p-8">
+            <Link href={link} key={link} className="cursor-pointer">
+                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5">
+                    <div className="md:flex">
+                        <div className="p-8">
                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{title.replace(/<[^>]*>?/gm, '')}</div>
                             <a href="#" className="block mt-1 text-xs leading-tight font-medium text-black text-right p-1">Wriiten by '{bloggername}', &nbsp; &nbsp;Posted at {postdate}</a>
                             <p className="mt-2 text-gray-500">{description.replace(/<[^>]*>?/gm, '')}</p>
