@@ -1,0 +1,15 @@
+
+  .readReceipts {
+    position: relative;
+    bottom: 6px;
+  }
+  
+  .readReceipt {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    margin: 1.5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+  }

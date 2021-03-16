@@ -46,70 +46,44 @@ export default function Home() {
       </div> 
     </div>
    
+    <div className={styles.container}>
     <div className="py-4 px-4 block md:flex justify-between md:-mx-2">
-      <div className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-  
-          <img className="h-60 w-full object-cover object-center" src="/images/nextjs-3.svg" alt="" />
-        
-          <div className="p-4 h-auto md:h-40 lg:h-48">
-            <a href="#" className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-              with Next js
-            </a>
-            <div className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-              Routes
-            </div>
-            <div className="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
-              <a className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#Next.js</a>
-              <a className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#route</a>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-      <div className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          
-          <img className="h-60 w-full object-cover object-center" src="/images/nv_service_api_img.png" alt="" />
-          
+      <div className="w-full lg:w-1/2 md:mx-2 mb-4 md:mb-0">
+        <div className="bg-white rounded-lg shadow overflow-hidden"> 
           <div className="p-4 h-auto md:h-40 lg:h-48">
             <a href="/nv/search/blogposts" className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-              using Naver Service Api
+              Search Naver Blog Posts
             </a>
             <div className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-              search blog posts what you want to read about !
+              With: Next.js(SWR), Naver Api, tailwindcss
             </div>
             <div className="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
-              <a className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#naver api</a>
-              <a className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#search</a>
-              <a className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#blog posts</a>
+              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#SWR</a>
+              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#Naver Api</a>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <div className="w-full lg:w-1/2 md:mx-2 mb-4 md:mb-0">
+        <div className="bg-white rounded-lg shadow overflow-hidden">
+          <div className="p-4 h-auto md:h-40 lg:h-48">
+            <a href="/tui/editor" className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
+              Post with Tui Editor
+            </a>
+            <div className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
+              With: Next.js(Router), Toast editor, tailwindcss
+            </div>
+            <div className="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
+              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#tui</a>
+              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#tailwind</a>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-  
-          <img className="h-60 w-full object-cover object-center" src="/images/redux.svg" alt="" />
-          
-          <div className="p-4 h-auto md:h-40 lg:h-48">
-            <a href="#" className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-              with Redux
-            </a>
-            <div className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-              State Management
-            </div>
-            <div className="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
-              <a className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#state</a>
-              <a className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#updates</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    
     </div>
-    
+    </div>
 </>
     
   )
