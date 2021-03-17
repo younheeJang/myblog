@@ -3,7 +3,7 @@ import { ChatEngine } from 'react-chat-engine';
 import ChatFeed from './ChatFeed'
 import { useState, useEffect } from "react";
 import LoginForm from './LoginForm'
-import Delay from './Delay'
+import Delay from '../Delay'
 
 function ReactChatEngine() {
     const [username, setUsername] = useState('');

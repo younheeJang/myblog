@@ -1,7 +1,7 @@
 import MessageForm from './MessageForm'
 import MyMessage from './MyMessage'
 import TheirMessage from './TheirMessage'
-import chatStyle from '../styles/chat.module.css'
+import chatStyle from '../../styles/chat.module.css'
 
 const ChatFeed = (props) => {
     const { chats, activeChat, userName, messages } = props;

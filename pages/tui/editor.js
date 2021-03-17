@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 const TuiEditor = dynamic(
-  () => import('../../components/TuiEditor'),
+  () => import('../../components/tui/TuiEditor'),
   { ssr: false }
 )
 

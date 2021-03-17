@@ -2,11 +2,11 @@ import 'codemirror/lib/codemirror.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
 import React, {  useRef  } from 'react';
-import styles from '../styles/layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import DateClock from './DateClock'
+import styles from '../../styles/layout.module.css'
+import utilStyles from '../../styles/utils.module.css'
+import DateClock from '../DateClock'
 import Image from 'next/image'
-import { setEditorData } from '../actions/editorDataAction'
+import { setEditorData } from '../../actions/editorDataAction'
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router'
 
