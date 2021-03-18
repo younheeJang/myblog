@@ -4,7 +4,7 @@ import Image from 'next/image'
 import utilStyles from '../styles/utils.module.css'
 import styles from '../styles/layout.module.css'
 import DateClock from '../components/DateClock'
-
+import Link from 'next/link'
 const name = 'CURIOUS JEAGER'
 const pageTitle = 'My Blog'
 
@@ -45,44 +45,56 @@ export default function Home() {
         </header>
       </div> 
     </div>
-   
-    <div className={styles.container}>
-    <div className="py-4 px-4 block md:flex justify-between md:-mx-2">
-      <div className="w-full lg:w-1/2 md:mx-2 mb-4 md:mb-0">
-        <div className="bg-white rounded-lg shadow overflow-hidden"> 
-          <div className="p-4 h-auto md:h-40 lg:h-48">
-            <a href="/nv/search/blogposts" className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-              Search Naver Blog Posts
-            </a>
-            <div className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-              With: Next.js(SWR), Naver Api, tailwindcss
-            </div>
-            <div className="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
-              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#SWR</a>
-              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#Naver Api</a>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-      <div className="w-full lg:w-1/2 md:mx-2 mb-4 md:mb-0">
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="p-4 h-auto md:h-40 lg:h-48">
-            <a href="/tui/editor" className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-              Post with Tui Editor
-            </a>
-            <div className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-              With: Next.js(Router), Toast editor, tailwindcss
-            </div>
-            <div className="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
-              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#tui</a>
-              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#tailwind</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
+    <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">        
+            <Link href='/nv/search/blogposts' key='/nv/search/blogposts'>
+                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
+                    <div className="md:flex">
+                        <div className="p-4">
+                            <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">Search Naver Blog Posts</div>
+                            <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js(SWR), Naver Api, tailwindcss</a>
+                            <p className="mt-2 text-black">Typing what you want to Search, then Naver api answer your request.</p>
+                            <div className="mt-4 bottom-1 lg:block">
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#SWR</a>
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#Naver</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Link>
+  
+  
+            <Link href='/tui/editor' key='/tui/editor'>
+                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
+                    <div className="md:flex">
+                        <div className="p-4">
+                            <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">Post with Tui Editor</div>
+                            <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js(Router), Toast editor, tailwindcss</a>
+                            <p className="mt-2 text-black">Write Your Story, then Tui editor show your story on their viewer.</p>
+                            <div className="mt-4 bottom-1 lg:block">
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#tui</a>
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#tailwind</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Link>
+    
+    
+            <Link href='/chat/engine' key='/chat/engine'>
+                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
+                    <div className="md:flex">
+                        <div className="p-4">
+                            <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">React Chat Engine</div>
+                            <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js(SWR), Naver Api, tailwindcss</a>
+                            <p className="mt-2 text-black">Login to Chat Engine, and Start Chat with Your Friends.</p>
+                            <div className="mt-4 bottom-1 lg:block">
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#chat</a>
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#react</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Link>
     </div>
 </>
     
