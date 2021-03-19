@@ -1,12 +1,12 @@
-import ReactChatEngine from '../../components/chat/ChatEngine'
+import Header from '../../components/utils/Header'
 
 
-export default function ChatEnginePage() {
+export default function HeaderPage() {
  
 
     return(
         <>
-            <ReactChatEngine />
+            <Header />
         </>
     )
 }
