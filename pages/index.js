@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import utilStyles from '../styles/utils.module.css'
 import styles from '../styles/layout.module.css'
-import DateClock from '../components/DateClock'
+import DateClock from '../components/utils/DateClock'
 import Link from 'next/link'
 const name = 'CURIOUS JEAGER'
 const pageTitle = 'My Blog'
@@ -87,6 +87,8 @@ export default function Home() {
                             <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">React Chat Engine</div>
                             <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js(SWR), Naver Api, tailwindcss</a>
                             <p className="mt-2 text-black">Login to Chat Engine, and Start Chat with Your Friends.</p>
+                            <p className="mt-2 text-black text-sm">[User 1: ID -> CURIOUS , PW -> 123123]</p>
+                            <p className="mt-2 text-black text-sm">[User 2: ID -> JEAGER, PW -> 123123]</p>
                             <div className="mt-4 bottom-1 lg:block">
                               <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#chat</a>
                               <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#react</a>

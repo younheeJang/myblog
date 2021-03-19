@@ -3,7 +3,7 @@ import '@toast-ui/editor/dist/toastui-editor.css';
 import { Viewer } from '@toast-ui/react-editor';
 import styles from '../../styles/layout.module.css'
 import utilStyles from '../../styles/utils.module.css'
-import DateClock from '../DateClock'
+import DateClock from '../utils/DateClock'
 import Image from 'next/image'
 import { useSelector } from 'react-redux';
 

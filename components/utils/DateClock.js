@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {startTimer} from '../actions/dateClockAction'
+import {startTimer} from '../../actions/dateClockAction'
 
 class DateClock extends React.Component {
     

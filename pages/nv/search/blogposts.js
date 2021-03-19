@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../../styles/layout.module.css'
 import utilStyles from '../../../styles/utils.module.css'
-import DateClock from '../../../components/DateClock'
+import DateClock from '../../../components/utils/DateClock'
 import NvBlogPosts from '../../../components/nv/NvBlogPosts'
 
 import React, { useState, useEffect } from "react";
