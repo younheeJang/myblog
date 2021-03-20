@@ -23,8 +23,8 @@ export default function Shopping() {
             <meta name="image" property="og:image" content="/images/LOGO.png" key="ogimage" />
             <meta name="url" property="og:url" content="http://localhost:3000/shop/items" key="ogurl" />
     </Head>
-    <div className="bg-hero-pattern bg-cover sticky top-0">
-        <div className={styles.container}>
+    <div className="bg-white shadow-lg sticky top-0 grid place-items-center">
+        <div className='max-w-xl p-4 '>
          
         <header className={styles.header}>
             <DateClock />
@@ -50,10 +50,10 @@ export default function Shopping() {
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -m-4">
       
-      <div className="cursor-pointer lg:w-1/4 md:w-1/2 p-4">
-        <a className="relative block h-60">
-          <img alt="product-flower1" className="rounded object-cover object-center w-full h-full block" src='/images/flower1.jpg' />
-          <img alt='payment' src='/images/payment_icon_yellow_small.png' className='h-5 w-10 absolute bottom-3 right-3'/>
+      <div className="cursor-pointer lg:w-1/4 md:w-1/2 sm:w-full p-4">
+        <a className="block h-60 ">
+          <img alt="product-flower1" className=" rounded object-cover object-center w-full h-full block" src='/images/flower1.jpg' />
+          <img alt='payment' src='/images/payment_icon_yellow_small.png' className=' h-5 w-10 lg:-my-10 lg:mx-40 md:-my-10 md:mx-72 -my-10 ml-3'/>     
         </a>
         <div className="mt-4">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">BOUQUET</h3>
@@ -62,10 +62,10 @@ export default function Shopping() {
         </div>
       </div>
       
-      <div className="rounded cursor-pointer lg:w-1/4 md:w-1/2 p-4">
-        <a className="relative block h-60">
+      <div className="rounded cursor-pointer lg:w-1/4 md:w-1/2 sm:w-full p-4">
+        <a className="block h-60">
           <img alt="product-flower2" className="rounded object-cover object-center w-full h-full block" src="/images/flower2.jpg" />
-          <img alt='payment' src='/images/payment_icon_yellow_small.png' className='h-5 w-10 absolute bottom-3 right-3'/>
+          <img alt='payment' src='/images/payment_icon_yellow_small.png' className=' h-5 w-10 lg:-my-10 lg:mx-40 md:-my-10 md:mx-72 -my-10 ml-3'/>
         </a>
         <div className="mt-4">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">BOUQUET</h3>
