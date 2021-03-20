@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   const {
     query: { nv: searchingWord },
   } = req
-  //console.log(req.query.nv)
+  
   const client_id = process.env.nv_client_id;
   const client_secret = process.env.nv_client_secret;
   console.log(searchingWord)
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
  }).then((res) => { 
    
   return res});
-  const result = await datas.json()// 리턴에 아이템 꺼내서 제이슨 안에 넣어주고 테스팅
+  const result = await datas.json()
 
 
 return res.json(result)

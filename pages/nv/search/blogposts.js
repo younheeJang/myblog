@@ -20,7 +20,7 @@ export default function SearchWithNv({}) {
         <div className={styles.container}>
           <Head>
             <title>NvSearchApi</title>
-            <link rel="icon" href="/heart.ico" />
+            <link rel="icon" href="/LOGO.ico" />
             <meta name="title" property="og:title" content="next/sg" key="ogtitle" />
             <meta
               name="description"

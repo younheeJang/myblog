@@ -40,8 +40,8 @@ function TuiEditor({}) {
                         </div>
                         <div className="col-end-7 col-span-1" onClick={handleSubmit}>
                             <div className="relative">
-                                <div className="absolute right-0 m-1.5">
-                                    <img src="/images/upload.png" />
+                                <div className="absolute right-0 m-1">
+                                    <img src="/images/upload.png" className='h-5 w-5' />
                                 </div>
                             </div>
                         </div>

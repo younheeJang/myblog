@@ -12,11 +12,9 @@ const pageTitle = 'SHOPPING'
 export default function Shopping() {
   return (
     <>
-    <div className="bg-hero-pattern bg-cover sticky top-0">
-        <div className={styles.container}>
-          <Head>
+     <Head>
             <title>SHOPPING</title>
-            <link rel="icon" href="/heart.ico" />
+            <link rel="icon" href="/LOGO.ico" />
             <meta name="title" property="og:title" content="next/index" key="ogtitle" />
             <meta
               name="description"
@@ -24,7 +22,10 @@ export default function Shopping() {
               content="shopping" key="ogdes" />
             <meta name="image" property="og:image" content="/images/LOGO.png" key="ogimage" />
             <meta name="url" property="og:url" content="http://localhost:3000/shop/items" key="ogurl" />
-        </Head>
+    </Head>
+    <div className="bg-hero-pattern bg-cover sticky top-0">
+        <div className={styles.container}>
+         
         <header className={styles.header}>
             <DateClock />
             <Image
@@ -32,15 +33,12 @@ export default function Shopping() {
               src="/images/LOGO.png"
               className={utilStyles.borderCircle}
               height={144}
-              width={144}
+              width={182}
               alt={name}
             />
-            
-            <h2 className={utilStyles.headingLg}>         
-                <div className="bg-opacity-50 text-gray-200">{name}</div>
-            </h2>
+          
             <h1>
-                <div className="text-gray-200">{pageTitle}</div>
+                <div className="text-black font-black">{pageTitle}</div>
             </h1>
         </header>
       </div> 
@@ -51,9 +49,11 @@ export default function Shopping() {
     <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -m-4">
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full cursor-pointer">
-        <a className="block h-60 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src='/images/flower1.jpg' />
+      
+      <div className="cursor-pointer lg:w-1/4 md:w-1/2 p-4">
+        <a className="relative block h-60">
+          <img alt="product-flower1" className="rounded object-cover object-center w-full h-full block" src='/images/flower1.jpg' />
+          <img alt='payment' src='/images/payment_icon_yellow_small.png' className='h-5 w-10 absolute bottom-3 right-3'/>
         </a>
         <div className="mt-4">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">BOUQUET</h3>
@@ -61,9 +61,11 @@ export default function Shopping() {
           <p className="mt-1">16,200</p>
         </div>
       </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full cursor-pointer">
-        <a className="block h-60 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="/images/flower2.jpg" />
+      
+      <div className="rounded cursor-pointer lg:w-1/4 md:w-1/2 p-4">
+        <a className="relative block h-60">
+          <img alt="product-flower2" className="rounded object-cover object-center w-full h-full block" src="/images/flower2.jpg" />
+          <img alt='payment' src='/images/payment_icon_yellow_small.png' className='h-5 w-10 absolute bottom-3 right-3'/>
         </a>
         <div className="mt-4">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">BOUQUET</h3>

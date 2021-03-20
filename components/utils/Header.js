@@ -29,9 +29,11 @@ const MobileList = () => {
         <div onClick={()=>{
             setActive(!active)
         }}>
-         Menu
+    
+        {!active && <div className='pr-5 grid place-items-end'><img src='/images/hamberger.png' className='h-5 w-5 p-auto'/></div>}
+        {active && <div className='pr-5 grid place-items-end'><img src='/images/close.png' className='h-5 w-5 p-auto'/></div>}
         </div>
-        {active && <List Style_MobileListUl='absolute right-2 top-5 list-none' Style_MobileListLi='text-center bg-white rounded-lg mb-1 p-2' />}
+        {active && <List Style_MobileListUl='absolute right-0 top-20 list-none' Style_MobileListLi='cursor-pointer text-center bg-transparent mb-1 p-2  italic uppercase' />}
     </>
 }
 
@@ -43,9 +45,9 @@ const Header = () => {
             setIsMobile(window.matchMedia('(max-width:768px)').matches)
         })
     })
-    return <nav className='grid grid-cols-2 items-center'>
-        <div>LOGO</div>
-        {isMobile?<MobileList />: <List Style_ListUl='flex justify-between list-none pr-10' Style_ListLi='text-center'/>}
+    return <nav className='shadow-lg bg-white sticky top-0 h-50 p-3 grid grid-cols-2 items-center'>
+        <div><img src='/images/LOGO.png' className='mt-2 h-12 w-15'/></div>
+        {isMobile?<MobileList />: <List Style_ListUl='flex justify-between list-none pr-10' Style_ListLi='cursor-pointer text-center italic uppercase'/>}
     </nav>
 }
 
