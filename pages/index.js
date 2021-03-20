@@ -12,11 +12,9 @@ const pageTitle = 'My Blog'
 export default function Home() {
   return (
     <>
-    <div className="bg-hero-pattern bg-cover sticky top-0">
-        <div className={styles.container}>
-          <Head>
+    <Head>
             <title>CURIOUS JEAGER</title>
-            <link rel="icon" href="/heart.ico" />
+            <link rel="icon" href="/LOGO.ico" />
             <meta name="title" property="og:title" content="next/index" key="ogtitle" />
             <meta
               name="description"
@@ -24,23 +22,23 @@ export default function Home() {
               content="my blog" key="ogdes" />
             <meta name="image" property="og:image" content="/images/profile.jpeg" key="ogimage" />
             <meta name="url" property="og:url" content="http://localhost:3000/" key="ogurl" />
-        </Head>
+    </Head>
+    <div className="bg-white shadow-lg sticky top-0 grid place-items-center">
+        <div className='max-w-xl p-4 '>
+         
         <header className={styles.header}>
             <DateClock />
             <Image
               priority
-              src="/images/profile.jpeg"
+              src="/images/LOGO.png"
               className={utilStyles.borderCircle}
               height={144}
-              width={144}
+              width={182}
               alt={name}
             />
-            
-            <h2 className={utilStyles.headingLg}>         
-                <div className="bg-opacity-50 text-gray-200">{name}</div>
-            </h2>
+          
             <h1>
-                <div className="text-gray-200">{pageTitle}</div>
+                <div className="text-black font-black">{pageTitle}</div>
             </h1>
         </header>
       </div> 
@@ -61,8 +59,6 @@ export default function Home() {
                     </div>
                 </div>
             </Link>
-  
-  
             <Link href='/tui/editor' key='/tui/editor'>
                 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
                     <div className="md:flex">
@@ -78,8 +74,6 @@ export default function Home() {
                     </div>
                 </div>
             </Link>
-    
-    
             <Link href='/chat/engine' key='/chat/engine'>
                 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
                     <div className="md:flex">
@@ -92,6 +86,36 @@ export default function Home() {
                             <div className="mt-4 bottom-1 lg:block">
                               <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#chat</a>
                               <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#react</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Link>
+            <Link href='/responsive/header' key='/responsive/header'>
+                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
+                    <div className="md:flex">
+                        <div className="p-4">
+                            <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">Responsive Header with LOGO.</div>
+                            <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js, tailwindcss</a>
+                            <p className="mt-2 text-black">Click, then You'll see Perfectily responsive header.</p>
+                            <div className="mt-4 bottom-1 lg:block">
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#header</a>
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#responsive</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Link>
+            <Link href='/shop/items' key='/shop/items'>
+                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
+                    <div className="md:flex">
+                        <div className="p-4">
+                            <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">Page with KAKAOPAY Api.</div>
+                            <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js, KakapPay Icon, tailwindcss</a>
+                            <p className="mt-2 text-black">It's working, So can see the pages only.</p>
+                            <div className="mt-4 bottom-1 lg:block">
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#kakaopay</a>
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#next</a>
                             </div>
                         </div>
                     </div>
