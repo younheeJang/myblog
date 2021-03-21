@@ -1,6 +1,14 @@
 {
   "/_app": "pages/_app.js",
+  "/api/posts/[nv]": "pages/api/posts/[nv].js",
+  "/chat/engine": "pages/chat/engine.html",
+  "/": "pages/index.html",
+  "/nv/search/blogposts": "pages/nv/search/blogposts.html",
+  "/responsive/header": "pages/responsive/header.html",
+  "/shop/items": "pages/shop/items.html",
+  "/tui/editor": "pages/tui/editor.html",
+  "/tui/viewer": "pages/tui/viewer.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }
