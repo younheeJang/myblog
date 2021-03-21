@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 
 
-const URL = "/api/posts";
+const URL = "/api/chat";
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

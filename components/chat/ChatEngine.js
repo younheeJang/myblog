@@ -6,16 +6,17 @@ import LoginForm from './LoginForm'
 import Delay from '../utils/Delay'
 
 function ReactChatEngine() {
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [projectID, setProjectID] = useState('');
+
+    
     useEffect(() => {
                 setUsername(window.localStorage.getItem('username'))
                 setPassword(window.localStorage.getItem('password'))
     }, []); 
         
-    console.log(process.env.nv_client_id)
-    console.log(process.env.ch_engine_projectID)
         if((!username && !password) || (username == '' && password == '')){
            
             return(
@@ -28,7 +29,7 @@ function ReactChatEngine() {
         if(username && password) {
         return (
             <ChatEngine
-                projectID={projectID}
+                projectID={process.env.ch_engine_projectID}
                 userName={username}
                 userSecret={password}
                 height='100vh'
@@ -38,5 +39,6 @@ function ReactChatEngine() {
     }
    
 }
+
 
 export default ReactChatEngine;
