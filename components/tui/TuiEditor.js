@@ -49,12 +49,14 @@ function TuiEditor({}) {
                 </div>
             </div>
             <div className={styles.container}>
+            <div className='overflow-hidden'>
             <Editor 
                 initialValue=''
                 initialEditType='wysiwyg'
                 height='70vh'
                 ref={editorRef}
             />
+            </div>
             </div>
         </>
     )
