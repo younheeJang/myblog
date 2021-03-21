@@ -14,7 +14,7 @@ function ReactChatEngine() {
                 setPassword(window.localStorage.getItem('password'))
                 setProjectID(process.env.ch_engine_projectID)
     
-    }, []); 
+    }, [process.env.ch_engine_projectID]); 
         
     console.log(projectID)
         if((!username && !password) || (username == '' && password == '')){
@@ -29,7 +29,7 @@ function ReactChatEngine() {
         if(username && password) {
         return (
             <ChatEngine
-                projectID='c17f5a9b-9b0b-4f8e-b8c3-a6f07c51df70'
+                projectID={projectID}
                 userName={username}
                 userSecret={password}
                 height='100vh'
