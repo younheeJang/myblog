@@ -29,7 +29,7 @@ function ReactChatEngine() {
         if(username && password) {
         return (
             <ChatEngine
-                projectID={projectID}
+                projectID='c17f5a9b-9b0b-4f8e-b8c3-a6f07c51df70'
                 userName={username}
                 userSecret={password}
                 height='100vh'
