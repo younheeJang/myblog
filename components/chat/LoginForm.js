@@ -4,13 +4,17 @@ import axios from 'axios';
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [projectID, setProjectID] = useState('');
+    useEffect(() => {
+        setProjectID(process.env.ch_engine_projectID)
+    })
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const authObject = { 'Project-ID' : process.env.ch_engine_projectID, 'User-Name': username, 'User-Secret': password}
+        const authObject = { 'Project-ID' : projectID, 'User-Name': username, 'User-Secret': password}
         console.log(authObject["Project-ID"])
         await axios.get('https://api.chatengine.io/chats', { headers: authObject }).catch(err => console.log(err));
-        
+       
         localStorage.setItem('username', username)
         localStorage.setItem('password', password)
         window.location.reload();
