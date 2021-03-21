@@ -36,7 +36,7 @@ export default function NvBlogPosts(){
     return (
         <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
             <div className="text-gray-600 max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-2xl mb-20">
-                <input value={ searchingWord } onChange={ handleInputChange } onMouseUp={fetchPostsData} type="search" name="search" placeholder="Search" className="overflow-hidden bg-white h-10 px-5 m-3 pr-10 pl-10 rounded-full text-sm focus:outline-none" />     
+                <input value={ searchingWord } onChange={ handleInputChange } onMouseUp={fetchPostsData} type="search" name="search" placeholder="Tying English... ! " className="overflow-hidden bg-white h-10 px-5 m-3 pr-10 pl-10 rounded-full text-sm focus:outline-none" />     
             </div>
         
             {posts && posts.map(({ link, title, postdate, bloggername, description }) => (

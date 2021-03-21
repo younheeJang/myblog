@@ -40,10 +40,12 @@ const MobileList = () => {
 const Header = () => {
     const [isMobile, setIsMobile ] = useState('');
     useEffect(()=>{
-        if(typeof window === 'undefined') setIsMobile(window.matchMedia('(max-width:768px)').matches);
+        if(typeof window === 'undefined') {setIsMobile(window.matchMedia('(max-width:768px)').matches);
+        window.location.reload();}
         window.addEventListener('resize', ()=>{
             setIsMobile(window.matchMedia('(max-width:768px)').matches)
         })
+        
     })
     return <nav className='shadow-lg bg-white sticky top-0 h-50 p-3 grid grid-cols-2 items-center'>
         <div><img src='/images/LOGO.png' className='mt-2 h-12 w-15'/></div>

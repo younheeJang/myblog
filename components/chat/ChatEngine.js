@@ -4,17 +4,19 @@ import ChatFeed from './ChatFeed'
 import { useState, useEffect } from "react";
 import LoginForm from './LoginForm'
 import Delay from '../utils/Delay'
+import useSWR from 'swr'
 
-
+const fetcher = (url) => fetch(url).then((res) => res.json())
 function ReactChatEngine() {
  
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [projectID, setProjectID] = useState('');
-    console.log(process.env.ch_engine_projectID)
+   
     
-   // const fetcher = (...args) => fetch(...args).then(res => console.log(res)).catch(err => console.log(err))
-   // const { data } = useSWR(`/api/chat/id`, fetcher)
+   
+    const { data, error } = useSWR('/api/chat/id', fetcher)
+   console.log(data)
    // mutate(`/api/chat/id`, false)  
    //console.log(data)
    //const data= fetch('/api/chat/id').then(res => res.json()).then(data=>data.data).catch(err => console.log(err))
@@ -38,7 +40,7 @@ function ReactChatEngine() {
         if(username && password) {
         return (
             <ChatEngine
-                projectID={projectID}
+                projectID='c17f5a9b-9b0b-4f8e-b8c3-a6f07c51df70'
                 userName={username}
                 userSecret={password}
                 height='100vh'
