@@ -4,17 +4,18 @@ import ChatFeed from './ChatFeed'
 import { useState, useEffect } from "react";
 import LoginForm from './LoginForm'
 import Delay from '../utils/Delay'
-import getConfig from 'next/config'
+//import getConfig from 'next/config'
 
-const {publicRuntimeConfig} = getConfig()
-const {ch_engine_projectID} = publicRuntimeConfig
+
 function ReactChatEngine() {
-    console.log(ch_engine_projectID)
+  //  const {publicRuntimeConfig} = getConfig()
+//const {ch_engine_projectID} = publicRuntimeConfig
+  //  console.log(ch_engine_projectID)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [projectID, setProjectID] = useState('');
     console.log(process.env.ch_engine_projectID)
-    console.log(ch_engine_projectID)
+    
    // const fetcher = (...args) => fetch(...args).then(res => console.log(res)).catch(err => console.log(err))
    // const { data } = useSWR(`/api/chat/id`, fetcher)
    // mutate(`/api/chat/id`, false)  
