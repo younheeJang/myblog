@@ -8,12 +8,15 @@ import Delay from '../utils/Delay'
 function ReactChatEngine() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [projectID, setProjectID] = useState(process.env.ch_engine_projectID);
+    const [projectID, setProjectID] = useState('');
     useEffect(() => {
                 setUsername(window.localStorage.getItem('username'))
                 setPassword(window.localStorage.getItem('password'))
-    }, []); 
+                setProjectID(process.env.ch_engine_projectID)
     
+    }, []); 
+        
+    console.log(projectID)
         if((!username && !password) || (username == '' && password == '')){
            
             return(
