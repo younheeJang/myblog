@@ -1,5 +1,5 @@
 import Cors from 'cors'
-import initMiddleware from '../../../lib/init-middleware'
+import initMiddleware from '../../../../lib/init-middleware'
 import axios from 'axios'
 
 export const config = {
