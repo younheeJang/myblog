@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 
 
-const URL = "/api/chat";
+//const URL = "/api/chat";
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -21,7 +21,7 @@ const LoginForm = () => {
         console.log(authObject["Project-ID"])
         await axios.get('https://api.chatengine.io/chats', { headers: authObject }).catch(err => console.log(err));
        */
-        await fetch(`${URL}/${username}/${password}`) 
+        //await fetch(`${URL}/${username}/${password}`) 
         localStorage.setItem('username', username)
         localStorage.setItem('password', password)
         window.location.reload();

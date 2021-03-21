@@ -6,7 +6,7 @@ import chatStyle from '../../styles/chat.module.css'
 const ChatFeed = (props) => {
     const { chats, activeChat, userName, messages } = props;
     const chat = chats && chats[activeChat];
-    console.log(chat)
+    
     const renderReadReceipts = (message, isMyMessage) => {
         
         return chat.people.map((person, index) => person.last_read === message.id && (
