@@ -23,7 +23,6 @@ export default async function handler(req, res) {
   
   const client_id = process.env.nv_client_id;
   const client_secret = process.env.nv_client_secret;
-  console.log(searchingWord)
   const datas = await fetch(`https://openapi.naver.com/v1/search/blog?query=${searchingWord}`, {
     headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
     }, function (error, response, body) {

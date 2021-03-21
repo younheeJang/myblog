@@ -8,7 +8,7 @@ const LoginForm = () => {
         e.preventDefault()
 
         const authObject = { 'Project-ID' : process.env.ch_engine_projectID, 'User-Name': username, 'User-Secret': password}
-        
+        console.log(authObject["Project-ID"])
         await axios.get('https://api.chatengine.io/chats', { headers: authObject }).catch(err => console.log(err));
         
         localStorage.setItem('username', username)
