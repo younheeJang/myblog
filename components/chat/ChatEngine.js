@@ -12,11 +12,10 @@ function ReactChatEngine() {
     useEffect(() => {
                 setUsername(window.localStorage.getItem('username'))
                 setPassword(window.localStorage.getItem('password'))
-                setProjectID(process.env.ch_engine_projectID)
-    
-    }, [process.env.ch_engine_projectID]); 
+    }, []); 
         
-    console.log(projectID)
+    console.log(process.env.nv_client_id)
+    console.log(process.env.ch_engine_projectID)
         if((!username && !password) || (username == '' && password == '')){
            
             return(
