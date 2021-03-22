@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   
   const client_id = process.env.nv_client_id;
   const client_secret = process.env.nv_client_secret;
-  const datas = await fetch(`https://openapi.naver.com/v1/search/blog?query=${searchingWord}`, {
+  const datas = await fetch(`https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(searchingWord)}`, {
     headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
    
   return res});
   const result = await datas.json()
-
+  
 
 return res.json(result)
 }

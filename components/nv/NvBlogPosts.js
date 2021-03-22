@@ -3,30 +3,28 @@ import Link from 'next/link'
 import useSWR, { mutate } from 'swr'
 
 const URL = "/api/posts";
-
+let searchingWord = ''
 export default function NvBlogPosts(){
  
-    const [searchingWord, setInputValue] = useState("");
+    const [userInput, setInputValue] = useState("");
+    const [posts, setPosts] = useState(null);
 
     function handleInputChange(event) {
         setInputValue(event.target.value);
     }
 
-
-    const fetcher = (...args) => fetch(...args).then(res => res.json()).then(data => data.items)
-    const { data:posts } = useSWR(searchingWord ? `${URL}/${searchingWord}`: null, fetcher)
-   
-    
-    
     async function fetchPostsData() {
-        mutate(`${URL}/${searchingWord}`, false)  
+        searchingWord = userInput
+        let datas = await fetch(`${URL}/${encodeURIComponent(searchingWord)}`).then(res=>res.json()).then(data => data.items)
+        setPosts(datas)
     }
     
     if(!posts){
     return (
         <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
-            <div className="text-gray-600 max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-2xl mb-5">
-                <input value={ searchingWord } onChange={ handleInputChange } onMouseUp={fetchPostsData} type="search" name="search" placeholder="Typing in English... !" className="bg-white h-10 px-5 m-3 pr-10 pl-10 rounded-full text-sm focus:outline-none" />
+            <div className="max-w-2xl mx-auto flex items-stretch grid grid-cols-12 text-gray-600 bg-white rounded-xl shadow-md mb-10">
+                <input value={ userInput } onChange={ handleInputChange } type="search" name="search" placeholder="Search" className="col-start-1 col-span-11 pl-5 pr-5 bg-white h-10 m-3 rounded-full text-sm focus:outline-none" />
+                <img src='/images/search.png' className='self-center w-5 h-5 ' onClick={fetchPostsData} />
             </div>
         </div>
     ) 
@@ -35,8 +33,9 @@ export default function NvBlogPosts(){
     if(posts){
     return (
         <div className="overflow-y-auto min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
-            <div className="text-gray-600 max-w-md mx-auto bg-white rounded-xl shadow-md  md:max-w-2xl mb-20">
-                <input value={ searchingWord } onChange={ handleInputChange } onMouseUp={fetchPostsData} type="search" name="search" placeholder="Tying in English... !" className="overflow-hidden bg-white h-10 px-5 m-3 pr-10 pl-10 rounded-full text-sm focus:outline-none" />     
+            <div className="max-w-md md:max-w-2xl mx-auto lex items-stretch grid grid-cols-12 text-gray-600 bg-white rounded-xl shadow-md mb-10">
+                <input value={ userInput } onChange={ handleInputChange } type="search" name="search" placeholder="Search" className="col-start-1 col-span-11 pl-5 pr-5 bg-white h-10 m-3 rounded-full text-sm focus:outline-none" />
+                <img src='/images/search.png' className='cursor-pointer self-center w-5 h-5 ' onClick={fetchPostsData} />
             </div>
         
             {posts && posts.map(({ link, title, postdate, bloggername, description }) => (
