@@ -40,8 +40,7 @@ const MobileList = () => {
 const Header = () => {
     const [isMobile, setIsMobile ] = useState('');
     useEffect(()=>{
-        if(typeof window === 'undefined') {setIsMobile(window.matchMedia('(max-width:768px)').matches);
-        window.location.reload();}
+        if(typeof window === 'undefined') setIsMobile(window.matchMedia('(max-width:768px)').matches);
         window.addEventListener('resize', ()=>{
             setIsMobile(window.matchMedia('(max-width:768px)').matches)
         })
