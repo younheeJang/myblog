@@ -24,6 +24,7 @@ export default function SearchWithNv({}) {
             <meta name="image" property="og:image" content="/images/profile.jpeg" key="ogimage" />
             <meta name="url" property="og:url" content="http://localhost:3000/nv/search" key="ogurl" />
       </Head>
+      
       <div className="bg-white shadow-lg sticky top-0 grid place-items-center">
         <div className='max-w-xl p-4 '>
          

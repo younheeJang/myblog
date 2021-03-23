@@ -37,19 +37,25 @@ const MobileList = () => {
     </>
 }
 
+  
 const Header = () => {
-    const [isMobile, setIsMobile ] = useState('');
+
+    const [isMobile, setIsMobile ] = useState(()=>{if(typeof window !== 'undefined'){return window.matchMedia('(max-width:768px)').matches ? true : false}});
+    const [isOpen, setOpen] = useState(false);
+    
     useEffect(()=>{
-        if(typeof window === 'undefined') setIsMobile(window.matchMedia('(max-width:768px)').matches);
-        window.addEventListener('resize', ()=>{
-            setIsMobile(window.matchMedia('(max-width:768px)').matches)
-        })
-        
+        setOpen(true)
+        window.addEventListener('resize', ()=>{setIsMobile(window.matchMedia('(max-width:768px)').matches)})
+        return window.removeEventListener('resize', ()=>{setOpen(true)&&setIsMobile(window.matchMedia('(max-width:768px)').matches)});
+
     })
-    return <nav className='shadow-lg bg-white sticky top-0 h-50 p-3 grid grid-cols-2 items-center'>
+    
+    return <>
+    {isOpen && <nav className='shadow-lg bg-white sticky top-0 h-50 p-3 grid grid-cols-2 items-center'>
         <div><img src='/images/LOGO.png' className='mt-2 h-12 w-15'/></div>
         {isMobile?<MobileList />: <List Style_ListUl='flex justify-between list-none pr-10' Style_ListLi='cursor-pointer text-center italic uppercase'/>}
-    </nav>
+    </nav>}
+    </>
 }
 
 List.propTypes ={
