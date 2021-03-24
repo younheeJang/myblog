@@ -19,5 +19,6 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
   await cors(req, res)
 
   const kko_admin_key = process.env.kko_admin_key;
+  
   return
 }
