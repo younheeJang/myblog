@@ -4,6 +4,7 @@ import Image from 'next/image'
 import utilStyles from '../../styles/utils.module.css'
 import styles from '../../styles/layout.module.css'
 import DateClock from '../../components/utils/DateClock'
+import ShoppingItems from '../../components/kko/ShoppingItems'
 
 const name = 'CURIOUS JEAGER'
 const pageTitle = 'SHOPPING'
@@ -49,30 +50,7 @@ export default function Shopping() {
     <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -m-4">
-      
-      <div className="cursor-pointer lg:w-1/4 md:w-1/2 sm:w-full p-4">
-        <a className="block h-60 ">
-          <img alt="product-flower1" className=" rounded object-cover object-center w-full h-full block" src='/images/flower1.jpg' />
-          <img alt='payment' src='/images/payment_icon_yellow_small.png' className=' h-5 w-10 lg:-my-10 lg:mx-40 md:-my-10 md:mx-72 -my-10 ml-3'/>     
-        </a>
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">BOUQUET</h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">PINK</h2>
-          <p className="mt-1">16,200</p>
-        </div>
-      </div>
-      
-      <div className="rounded cursor-pointer lg:w-1/4 md:w-1/2 sm:w-full p-4">
-        <a className="block h-60">
-          <img alt="product-flower2" className="rounded object-cover object-center w-full h-full block" src="/images/flower2.jpg" />
-          <img alt='payment' src='/images/payment_icon_yellow_small.png' className=' h-5 w-10 lg:-my-10 lg:mx-40 md:-my-10 md:mx-72 -my-10 ml-3'/>
-        </a>
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">BOUQUET</h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">RED</h2>
-          <p className="mt-1">13,400</p>
-        </div>
-      </div>
+      <ShoppingItems />
     </div>
   </div>
 </section>
