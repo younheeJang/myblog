@@ -8,8 +8,11 @@ interface ShoppingItemProps {
   Price: number;
 };
 
-
 const ShoppingItems: React.FC<ShoppingItemProps[]> = () => {
+
+  const KakaoPayReady = () => {
+  
+  }
   
 const items : ShoppingItemProps[]= [
   {
