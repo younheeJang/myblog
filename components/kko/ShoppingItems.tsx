@@ -13,7 +13,7 @@ const ShoppingItems: React.FC<ShoppingItemProps[]> = () => {
 
   const KakaoPayReady = async () => {
     console.log('started')
-    await fetch('/api/kko/pay')
+    await fetch('/api/kko/pay/ready')
   }
   const baseURL = 'https://kapi.kakao.com';
   const KakaoPayReady1 = async () => {

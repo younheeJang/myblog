@@ -1,8 +1,8 @@
 import Cors from 'cors'
-import initMiddleware from '../../../lib/init-middleware'
+import initMiddleware from '../../../../lib/init-middleware'
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import ObjectToFormData from '../../../lib/utils/object-to-formdata'
+import ObjectToFormData from '../../../../lib/utils/object-to-formdata'
 
 export const config = {
   api: {
