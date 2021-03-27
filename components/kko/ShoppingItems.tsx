@@ -10,12 +10,16 @@ interface ShoppingItemProps {
 
 const ShoppingItems: React.FC<ShoppingItemProps[]> = () => {
 
-  const KakaoPayReady = async () => {
+  const KakaoPayReady = async ({ Name, Price }) => {
+    
     console.log('started')
-    const result = await fetch('/api/kko/pay/ready').then(res => res.json())
+    //const result = await fetch('/api/kko/pay/ready').then(res => res.json())
+    const result = await fetch(`/api/kko/pay/ready/${encodeURIComponent(Name)}/${encodeURIComponent(Price)}`).then(res => res.json())
+   
     console.log(result)
     const tid = result['tid']
     console.log(tid)
+    localStorage.setItem('tid', tid)
     window.location.href = result['next_redirect_pc_url']
   }
  
@@ -43,7 +47,7 @@ const items : ShoppingItemProps[]= [
         <a className="block h-60 ">
           <img alt="product-flower1" className=" rounded object-cover object-center w-full h-full block" src={Image} />
           <img alt='payment' src='/images/payment_icon_yellow_small.png' 
-               className=' h-5 w-10 lg:-my-10 lg:mx-40 md:-my-10 md:mx-72 -my-10 ml-3' onClick={KakaoPayReady}/>     
+               className=' h-5 w-10 lg:-my-10 lg:mx-40 md:-my-10 md:mx-72 -my-10 ml-3' onClick={()=>{KakaoPayReady({Name, Price})}}/>     
         </a>
         <div className="mt-4">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{Category}</h3>

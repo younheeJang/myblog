@@ -1,8 +1,8 @@
 import Cors from 'cors'
-import initMiddleware from '../../../../lib/init-middleware'
+import initMiddleware from '../../../../../lib/init-middleware'
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios, {AxiosResponse} from 'axios'
-import ObjectToFormData from '../../../../lib/utils/object-to-formdata'
+import ObjectToFormData from '../../../../../lib/utils/object-to-formdata'
 
 export const config = {
   api: {
@@ -18,23 +18,20 @@ const cors = initMiddleware(
 
 const baseURL = 'https://kapi.kakao.com';
 
+
+
 export default async function handler(req:NextApiRequest , res:NextApiResponse) {
   // Run cors
   await cors(req, res)
-  
+  console.log(req.query.slug)
   const data = {
     'cid':'TC0ONETIME',
+    'tid':req.query.slug[1],
     'partner_order_id': 'curious',
     'partner_user_id': 'jeager',
-    'item_name': 'flower',
-    'quantity': 1,
-    'total_amount': 10,
-    'tax_free_amount': 0,
-    'approval_url': 'http://localhost:3000',
-    'fail_url': 'http://localhost:3000',
-    'cancel_url': 'http://localhost:3000',
+    'pg_token':req.query.slug[0]
 };
-
+ 
   const FormData = ObjectToFormData(data)
   const kko_admin_key = process.env.kko_admin_key;
   
@@ -45,8 +42,7 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
   axios.defaults.headers.post = null
   
   
-  const result = await axios.post(`${baseURL}/v1/payment/ready`, FormData, {headers})
-  .then((res:AxiosResponse) => res.data).catch(err => console.log(err))
+  const result = await axios.post(`${baseURL}/v1/payment/approve`, FormData, {headers}).then((res:AxiosResponse) => res.data).catch(err => console.log(err))
   
   console.log(result)
   
