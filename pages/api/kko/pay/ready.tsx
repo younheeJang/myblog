@@ -1,7 +1,7 @@
 import Cors from 'cors'
 import initMiddleware from '../../../../lib/init-middleware'
 import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
+import axios, {AxiosResponse} from 'axios'
 import ObjectToFormData from '../../../../lib/utils/object-to-formdata'
 
 export const config = {
@@ -43,10 +43,12 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
   }
   axios.defaults.headers.post = null
-   await axios.post(`${baseURL}/v1/payment/ready`, FormData, {headers})
-  .then(res => {
-    console.log('send ok', res.data)
-  }).catch(err => console.log(err))
   
-  return
+  
+  const result = await axios.post(`${baseURL}/v1/payment/ready`, FormData, {headers})
+  .then((res:AxiosResponse) => res.data).catch(err => console.log(err))
+  
+  console.log(result)
+  
+  return res.send(result)
 }

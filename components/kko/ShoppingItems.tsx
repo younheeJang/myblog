@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 interface ShoppingItemProps {
   Id: string;
@@ -13,35 +12,13 @@ const ShoppingItems: React.FC<ShoppingItemProps[]> = () => {
 
   const KakaoPayReady = async () => {
     console.log('started')
-    await fetch('/api/kko/pay/ready')
+    const result = await fetch('/api/kko/pay/ready').then(res => res.json())
+    console.log(result)
+    const tid = result['tid']
+    console.log(tid)
+    window.location.href = result['next_redirect_pc_url']
   }
-  const baseURL = 'https://kapi.kakao.com';
-  const KakaoPayReady1 = async () => {
-    const data = {
-      cid:'TC0ONETIME',
-      partner_order_id: '1234',
-      partner_user_id: 'jeager',
-      item_name: 'flower',
-      quantity: 100,
-      total_amount: 1640000,
-      tax_free_amount: 0,
-      approval_url:'http:localhost:3000/shop/items',
-      cancel_url: 'http:localhost:3000',
-      fail_url: 'http:localhost:3000',
-  };
-    const kko_admin_key = process.env.kko_admin_key;
-    const headers = {
-      'Authorization': 'KakaoAK '+`${kko_admin_key}`,
-      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-      mode: 'no-cors',
-    }
-    axios.defaults.headers.post = null
-     await axios.post(`${baseURL}/v1/payment/ready`, data, {headers})
-    .then(res => {
-      console.log('send ok', res.data)
-    }).catch(err => console.log(err))
-  
-  }
+ 
 const items : ShoppingItemProps[]= [
   {
     Id: 'qw123',
