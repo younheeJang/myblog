@@ -17,7 +17,7 @@ const ShoppingItems: React.FC<ShoppingItemProps[]> = () => {
     console.log(baseUrl)
     console.log('started')
     //const result = await fetch('/api/kko/pay/ready').then(res => res.json())
-    const result = await fetch(`/api/kko/pay/ready/${encodeURIComponent(Name)}/${encodeURIComponent(Price)}/${baseUrl}`).then(res => res.json())
+    const result = await fetch(`/api/kko/pay/ready/${encodeURIComponent(Name)}/${encodeURIComponent(Price)}/${encodeURIComponent(baseUrl)}`).then(res => res.json())
    
     console.log(result)
     const tid = result['tid']
