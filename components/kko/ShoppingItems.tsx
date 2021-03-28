@@ -9,12 +9,14 @@ interface ShoppingItemProps {
 };
 
 const ShoppingItems: React.FC<ShoppingItemProps[]> = () => {
-
-  const KakaoPayReady = async ({ Name, Price }) => {
+  
     
+  
+  const KakaoPayReady = async ({ Name, Price }) => {
+    const baseUrl = window.location.protocol + "//" + window.location.host
     console.log('started')
     //const result = await fetch('/api/kko/pay/ready').then(res => res.json())
-    const result = await fetch(`/api/kko/pay/ready/${encodeURIComponent(Name)}/${encodeURIComponent(Price)}`).then(res => res.json())
+    const result = await fetch(`/api/kko/pay/ready/${encodeURIComponent(Name)}/${encodeURIComponent(Price)}/${encodeURIComponent(baseUrl)}`).then(res => res.json())
    
     console.log(result)
     const tid = result['tid']

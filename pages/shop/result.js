@@ -10,7 +10,7 @@ const name = 'CURIOUS JEAGER'
 const pageTitle = 'SHOPPING'
 
 
-export default function Shopping() {
+function ShoppingResult() {
   return (
     <>
      <Head>
@@ -60,3 +60,5 @@ export default function Shopping() {
     
   )
 }
+
+  export default ShoppingResult

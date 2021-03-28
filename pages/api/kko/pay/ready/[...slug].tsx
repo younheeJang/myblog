@@ -33,9 +33,9 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
     'quantity': 1,
     'total_amount': Number(req.query.slug[1]),
     'tax_free_amount': 0,
-    'approval_url': 'http://localhost:3000/shop/result',
-    'fail_url': 'http://localhost:3000',
-    'cancel_url': 'http://localhost:3000',
+    'approval_url': req.query.slug[2] + "/shop/result",
+    'fail_url': req.query.slug[2],
+    'cancel_url': req.query.slug[2],
 };
 
   const FormData = ObjectToFormData(data)
@@ -51,7 +51,6 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
   const result = await axios.post(`${baseURL}/v1/payment/ready`, FormData, {headers})
   .then((res:AxiosResponse) => res.data).catch(err => console.log(err))
   
-  console.log(result)
   
   return res.send(result)
 }

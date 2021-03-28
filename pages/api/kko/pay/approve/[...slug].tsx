@@ -23,7 +23,7 @@ const baseURL = 'https://kapi.kakao.com';
 export default async function handler(req:NextApiRequest , res:NextApiResponse) {
   // Run cors
   await cors(req, res)
-  console.log(req.query.slug)
+  
   const data = {
     'cid':'TC0ONETIME',
     'tid':req.query.slug[1],
@@ -44,7 +44,6 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
   
   const result = await axios.post(`${baseURL}/v1/payment/approve`, FormData, {headers}).then((res:AxiosResponse) => res.data).catch(err => console.log(err))
   
-  console.log(result)
   
   return res.send(result)
 }
