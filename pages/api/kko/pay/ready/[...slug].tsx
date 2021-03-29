@@ -24,7 +24,7 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
   // Run cors
   await cors(req, res)
   console.log(req.query)
-
+/*
   const data = {
     'cid':'TC0ONETIME',
     'partner_order_id': 'curious',
@@ -33,11 +33,23 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
     'quantity': 1,
     'total_amount': Number(req.query.slug[1]),
     'tax_free_amount': 0,
-    'approval_url': decodeURIComponent(req.query.slug[2]) + "/shop/result",
+    'approval_url': req.query.slug[2] + "/shop/result",
     'fail_url': req.query.slug[2],
     'cancel_url': req.query.slug[2],
 };
-
+*/
+const data = {
+  'cid':'TC0ONETIME',
+  'partner_order_id': 'curious',
+  'partner_user_id': 'jeager',
+  'item_name': req.query.slug[0],
+  'quantity': 1,
+  'total_amount': Number(req.query.slug[1]),
+  'tax_free_amount': 0,
+  'approval_url': `${req.query.slug[2]}`+"//"+`${req.query.slug[3]}` + "/shop/result",
+  'fail_url': 'http://localhost:3000',
+  'cancel_url':'http://localhost:3000',
+};
   const FormData = ObjectToFormData(data)
   const kko_admin_key = process.env.kko_admin_key;
   
