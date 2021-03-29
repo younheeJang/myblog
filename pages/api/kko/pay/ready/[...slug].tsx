@@ -23,21 +23,7 @@ const baseURL = 'https://kapi.kakao.com';
 export default async function handler(req:NextApiRequest , res:NextApiResponse) {
   // Run cors
   await cors(req, res)
-  console.log(req.query)
-/*
-  const data = {
-    'cid':'TC0ONETIME',
-    'partner_order_id': 'curious',
-    'partner_user_id': 'jeager',
-    'item_name': req.query.slug[0],
-    'quantity': 1,
-    'total_amount': Number(req.query.slug[1]),
-    'tax_free_amount': 0,
-    'approval_url': req.query.slug[2] + "/shop/result",
-    'fail_url': req.query.slug[2],
-    'cancel_url': req.query.slug[2],
-};
-*/
+  
 const data = {
   'cid':'TC0ONETIME',
   'partner_order_id': 'curious',

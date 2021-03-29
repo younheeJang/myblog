@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 interface ShoppingItemProps {
   Id: string;
@@ -15,16 +14,13 @@ const ShoppingItems: React.FC<ShoppingItemProps[]> = () => {
   
   const KakaoPayReady = async ({ Name, Price }) => {
    
-    const baseUrl = window.location.protocol + "//" + window.location.host
     const protocol = window.location.protocol;
     const host= window.location.host;
-    console.log('started')
-    //const result = await fetch('/api/kko/pay/ready').then(res => res.json())
-    //const result = await axios.get(`/api/kko/pay/ready/${encodeURIComponent(Name)}/${encodeURIComponent(Price)}/${encodeURIComponent(baseUrl).replace(/%3A%2F%2F/g, "://").replace(/%3A/g, ":")}`).then(res => res.data).catch(err => console.log(err))
+   
     const result = await fetch(`/api/kko/pay/ready/${encodeURIComponent(Name)}/${encodeURIComponent(Price)}/${protocol}/${host}`).then(res => res.json())
-    console.log(result)
+   
     const tid = result['tid']
-    console.log(tid)
+   
     localStorage.setItem('tid', tid)
     window.location.href = result['next_redirect_pc_url']
   }
