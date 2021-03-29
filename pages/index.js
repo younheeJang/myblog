@@ -112,7 +112,7 @@ export default function Home() {
                         <div className="p-4">
                             <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">Page with KAKAOPAY Api.</div>
                             <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js, KakapPay Icon, tailwindcss</a>
-                            <p className="mt-2 text-black">It's working, So can see the pages only.</p>
+                            <p className="mt-2 text-black">Test Pay Approved Only.</p>
                             <div className="mt-4 bottom-1 lg:block">
                               <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#kakaopay</a>
                               <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#next</a>
