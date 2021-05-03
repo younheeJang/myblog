@@ -4,8 +4,9 @@ import Image from 'next/image'
 import styles from '../../styles/layout.module.css'
 import utilStyles from '../../styles/utils.module.css'
 import DateClock from '../../components/utils/DateClock'
+import TimerBasic from '../../components/timer/TimerBasic';
 
-const TimerBasic:React.FC = () => {
+const TimerBasicPage:React.FC = () => {
 
     
     return(
@@ -48,9 +49,9 @@ const TimerBasic:React.FC = () => {
                     </div>
                 </div>
             </div>
-           
+           <TimerBasic />
         </>
     )
 }
 
-export default TimerBasic;
+export default TimerBasicPage;
