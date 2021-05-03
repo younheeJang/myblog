@@ -125,11 +125,7 @@ export default function Home() {
                 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
                     <div className="md:flex">
                         <div className="p-4">
-<<<<<<< HEAD
-                            <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">Page TodoList.</div>
-=======
                             <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">TodoList.</div>
->>>>>>> 4b3f6f5559ce42b0e1f0b7912d569f3b79193f33
                             <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js, TypeScript, tailwindcss</a>
                             <p className="mt-2 text-black">Todo</p>
                             <div className="mt-4 bottom-1 lg:block">
@@ -140,8 +136,6 @@ export default function Home() {
                     </div>
                 </div>
             </Link>
-<<<<<<< HEAD
-=======
             <Link href='/timer/basic' key='/timer/basic'>
                 <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
                     <div className="md:flex">
@@ -157,7 +151,6 @@ export default function Home() {
                     </div>
                 </div>
             </Link>
->>>>>>> 4b3f6f5559ce42b0e1f0b7912d569f3b79193f33
     </div>
 </>
     
