@@ -7,12 +7,14 @@ interface ApiKey {
 }
 
 const MovieRecent5: React.FC<ApiKey> = (props) => {
+  let { apikey } = props;
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
+  console.log(apikey)
   const fetchData=async(searchTerm:string)=>{
     const response = await axios.get('https://www.omdbapi.com/', {
         params: {
-            apikey: props.apikey,
+            apikey: apikey,
             s: searchTerm,
         }
     });
