@@ -9,11 +9,10 @@ interface ApiKey {
 const MovieRecent5: React.FC<ApiKey> = (props) => {
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
-  console.log(props)
   const fetchData=async(searchTerm:string)=>{
     const response = await axios.get('https://www.omdbapi.com/', {
         params: {
-            apikey: process.env.omdb_api_key,
+            apikey: props.apikey,
             s: searchTerm,
         }
     });
