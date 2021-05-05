@@ -40,7 +40,7 @@ const handleKeyDown = (e) => {
 
   return (
     <>
-    <input data-key={apikey} className="input is-link" onKeyDown={handleKeyDown} type="text" placeholder="get recent5 movie!" value={apikey} onChange={handleChange}></input>
+    <input  className="input is-link" onKeyDown={handleKeyDown} type="text" placeholder={apikey} value={inputValue} onChange={handleChange}></input>
    {recent5&&recent5.length>=1&&
     <Carousel>
         {recent5.map(r => <img key={r.imdbID} src={r.Poster} />)}  
