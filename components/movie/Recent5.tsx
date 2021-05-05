@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import Carousel from 'nuka-carousel';
 import axios from 'axios';
 
-interface ApiKey {
-  apikey: string
-}
-
 const MovieRecent5: React.FC = () => {
   
   let [inputValue, setInputValue] = useState('');
