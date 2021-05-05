@@ -10,12 +10,12 @@ const MovieRecent5: React.FC<ApiKey> = (props) => {
   
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
-  let [apikey, setApikey] = useState(props.apikey)
+  //let [apikey, setApikey] = useState(props.apikey)
   //console.log('apikey  '+props.apikey)
   const fetchData=async(searchTerm:string, apikey:string)=>{
-    const response = await axios.get(`https://www.omdbapi.com/?apikey=${apikey}`, {
+    const response = await axios.get(`https://www.omdbapi.com/`, {
         params: {
-            //apikey: apikey,
+            apikey: 'cd6b223e',
             s: searchTerm,
         }
     });
@@ -25,7 +25,7 @@ const MovieRecent5: React.FC<ApiKey> = (props) => {
     return response.data.Search;
 }
 const handleChange = async(e) =>{
-  setApikey(e.target.getAttribute('data-key'))
+  //setApikey(e.target.getAttribute('data-key'))
   if(e.target.value === '') return;
   else { 
      setInputValue(e.target.value);
@@ -42,7 +42,7 @@ const handleKeyDown = (e) => {
 
   return (
     <>
-    <input data-key={apikey} className="input is-link" onKeyDown={handleKeyDown} type="text" placeholder={apikey} value={inputValue} onChange={handleChange}></input>
+    <input className="input is-link" onKeyDown={handleKeyDown} type="text" placeholder='get recent5 poster on your sear' value={inputValue} onChange={handleChange}></input>
    {recent5&&recent5.length>=1&&
     <Carousel>
         {recent5.map(r => <img key={r.imdbID} src={r.Poster} />)}  
