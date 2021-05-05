@@ -10,11 +10,11 @@ const MovieRecent5: React.FC<ApiKey> = (props) => {
   let { apikey } = props;
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
-  console.log('apikey  '+apikey)
+  console.log('apikey  '+props.apikey)
   const fetchData=async(searchTerm:string)=>{
-    const response = await axios.get('https://www.omdbapi.com/', {
+    const response = await axios.get(`https://www.omdbapi.com/?apikey=${props.apikey}`, {
         params: {
-            apikey: apikey,
+            //apikey: apikey,
             s: searchTerm,
         }
     });
