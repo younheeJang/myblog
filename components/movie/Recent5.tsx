@@ -6,7 +6,7 @@ const MovieRecent5: React.FC = () => {
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
   const fetchData=async(searchTerm:string)=>{
-    const response = await axios.get('http://www.omdbapi.com/', {
+    const response = await axios.get('https://www.omdbapi.com/', {
         params: {
             apikey: 'cd6b223e',
             s: searchTerm,
