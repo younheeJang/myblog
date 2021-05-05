@@ -18,6 +18,7 @@
     "export": "^0.1.337",
     "next": "^10.0.8",
     "next-redux-wrapper": "^6.0.2",
+    "nuka-carousel": "^4.7.7",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-chat-engine": "^1.7.0",
