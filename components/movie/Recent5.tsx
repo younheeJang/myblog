@@ -25,7 +25,7 @@ const MovieRecent5: React.FC<ApiKey> = (props) => {
     return response.data.Search;
 }
 const handleChange = async(e) =>{
-  console.log(e.target, e.target.getAttribute('data-key'))
+  setApikey(e.target.getAttribute('data-key'))
   if(e.target.value === '') return;
   else { 
      setInputValue(e.target.value);
