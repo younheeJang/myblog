@@ -8,7 +8,7 @@ const MovieRecent5: React.FC = () => {
   const fetchData=async(searchTerm:string)=>{
     const response = await axios.get('https://www.omdbapi.com/', {
         params: {
-            apikey: 'cd6b223e',
+            apikey: process.env.omdb_api_key,
             s: searchTerm,
         }
     });
