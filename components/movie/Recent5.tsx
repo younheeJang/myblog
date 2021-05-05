@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import Carousel from 'nuka-carousel';
 import axios from 'axios';
 
-const MovieRecent5: React.FC = () => {
+interface ApiKey {
+  apikey: string
+}
+
+const MovieRecent5: React.FC<ApiKey> = (props) => {
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
-  console.log(process.env.omdb_api_key)
+  console.log(props.apikey)
   const fetchData=async(searchTerm:string)=>{
     const response = await axios.get('https://www.omdbapi.com/', {
         params: {
