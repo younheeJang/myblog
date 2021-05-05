@@ -6,13 +6,12 @@ interface ApiKey {
   apikey: string
 }
 
-const MovieRecent5: React.FC<ApiKey> = (props) => {
+const MovieRecent5: React.FC = () => {
   
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
-  //let [apikey, setApikey] = useState(props.apikey)
-  //console.log('apikey  '+props.apikey)
-  const fetchData=async(searchTerm:string, apikey:string)=>{
+ 
+  const fetchData=async(searchTerm:string)=>{
     const response = await axios.get(`https://www.omdbapi.com/`, {
         params: {
             apikey: 'cd6b223e',
@@ -25,11 +24,11 @@ const MovieRecent5: React.FC<ApiKey> = (props) => {
     return response.data.Search;
 }
 const handleChange = async(e) =>{
-  //setApikey(e.target.getAttribute('data-key'))
+
   if(e.target.value === '') return;
   else { 
      setInputValue(e.target.value);
-     fetchData(e.target.value, e.target['data-key']).then((data) => {
+     fetchData(e.target.value).then((data) => {
      const sortedMovie = data.sort((a,b)=> b.Year - a.Year );
      setRecent5(sortedMovie.slice(0,5));
     })
