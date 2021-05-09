@@ -21,7 +21,7 @@ const MovieRecent5Page:React.FC = () => {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"></link>
              </Head>
              <MovieHeader />
-             <MovieRecent5 apikey={process.env.omdb_api_key}/>
+             <MovieRecent5 />
         </>
     )
 }
