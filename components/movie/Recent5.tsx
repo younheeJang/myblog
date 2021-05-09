@@ -3,12 +3,14 @@ import Carousel from 'nuka-carousel';
 import axios from 'axios';
 
 const MovieRecent5: React.FC = () => {
+  
   let [inputValue, setInputValue] = useState('');
   let [recent5, setRecent5] = useState(null);
+ 
   const fetchData=async(searchTerm:string)=>{
-    const response = await axios.get('https://www.omdbapi.com/', {
+    const response = await axios.get(`https://www.omdbapi.com/`, {
         params: {
-            apikey: process.env.omdb_api_key,
+            apikey: 'cd6b223e',
             s: searchTerm,
         }
     });
@@ -18,6 +20,7 @@ const MovieRecent5: React.FC = () => {
     return response.data.Search;
 }
 const handleChange = async(e) =>{
+
   if(e.target.value === '') return;
   else { 
      setInputValue(e.target.value);
@@ -34,7 +37,7 @@ const handleKeyDown = (e) => {
 
   return (
     <>
-    <input className="input is-link" onKeyDown={handleKeyDown} type="text" placeholder="get recent5 movie!" value={inputValue} onChange={handleChange}></input>
+    <input className="input is-link" onKeyDown={handleKeyDown} type="text" placeholder='get recent5 poster on your sear' value={inputValue} onChange={handleChange}></input>
    {recent5&&recent5.length>=1&&
     <Carousel>
         {recent5.map(r => <img key={r.imdbID} src={r.Poster} />)}  
