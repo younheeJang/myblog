@@ -9,7 +9,7 @@ const GameCrashGoalPage:React.FC = () => {
     return(
         <>
             <Head>
-            <title>Movie Recent5</title>
+            <title>Crash Goal</title>
             <link rel="icon" href="/LOGO.ico" />
             <meta name="title" property="og:title" content="next/index" key="ogtitle" />
             <meta
