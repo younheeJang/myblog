@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "date-fns": "^2.19.0",
     "export": "^0.1.337",
+    "matter-js": "^0.17.1",
     "next": "^10.0.8",
     "next-redux-wrapper": "^6.0.2",
     "nuka-carousel": "^4.7.7",
