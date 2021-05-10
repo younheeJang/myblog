@@ -3,7 +3,7 @@ import React from "react";
 const Header: React.FC = () => {
   return (
     <>
-      <nav className="flex items-center justify-between flex-wrap bg-red-300 p-6">
+      <nav className="h-36 bg-red-300 flex items-center justify-between flex-wrap p-6">
         <div className="flex items-center flex-no-shrink text-white mr-6">
           <img src='/images/LOGO.png' className='mt-1 w-10 h-8'></img>
           <span className="font-semibold text-xl tracking-tight">
