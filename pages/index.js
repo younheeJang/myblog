@@ -166,6 +166,21 @@ export default function Home() {
                     </div>
                 </div>
             </Link>
+            <Link href='/game/crashgoal' key='/game/crashgoal'>
+                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl mb-5 cursor-pointer">
+                    <div className="md:flex">
+                        <div className="p-4">
+                            <div className="uppercase tracking-wide block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">Gama: Crash Goal</div>
+                            <a href="#" className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">With: Next.js, matter.js, tailwindcss</a>
+                            <p className="mt-2 text-black">Crash Goal</p>
+                            <div className="mt-4 bottom-1 lg:block">
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#matter.js</a>
+                              <a className="inline bg-gray-200 py-1 px-2 rounded-full text-xs lowercase text-gray-700" href="#">#react</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Link>
     </div>
 </>
     
